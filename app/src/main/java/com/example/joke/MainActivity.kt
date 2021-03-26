@@ -35,12 +35,12 @@ class MainActivity : AppCompatActivity(), JokeContract.View {
     }
 
     override fun showLoading() {
-        progressBar3.visibility = View.VISIBLE
+        loading.visibility = View.VISIBLE
         buttonJoke.visibility = View.INVISIBLE
     }
 
     override fun disableLoading() {
-        progressBar3.visibility = View.INVISIBLE
+        loading.visibility = View.INVISIBLE
         buttonJoke.visibility = View.VISIBLE
     }
 
