@@ -1,41 +1,38 @@
 package com.example.joke.presenter
 
-import androidx.appcompat.app.AlertDialog
+import com.example.joke.R
 import com.example.joke.http.HttpHelper
 import com.example.joke.interfaces.JokeContract
-import com.example.joke.interfaces.JokeContract.View
-import com.example.joke.model.Joke
-import com.google.gson.Gson
-import com.google.gson.JsonArray
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import org.json.JSONArray
-import org.json.JSONObject
 
 class JokePresenter: JokeContract.Presenter {
     lateinit var view: JokeContract.View
     private val httpHelper = HttpHelper()
+    val messageSuccess = "Consulta feita com sucesso!"
+    val messageError = "Consulta não teve sucesso!"
 
-    override fun getJoke() {
+    override fun getJoke()  {
+        // Habilita o loading na tela
         view.showLoading();
 
-        doAsync{
-            var resposta = httpHelper.getJoke()
-            var respostaObjJson = JSONObject(resposta);
+        try {
+            //Código que acontece em background
+            doAsync {
+                val responseApi = httpHelper.getJoke()
 
-            var joke = Joke(respostaObjJson.getString("icon_url"),
-                respostaObjJson.getString("id"),
-                respostaObjJson.getString("url"),
-                respostaObjJson.getString("value")
-            )
-
-            uiThread {
-                println(joke);
-                view.disableLoading()
+                //Código que acontece após o termino da request
+                uiThread {
+                    view.disableLoading()
+                    view.showSuccess(messageSuccess)
+                    view.openJokeList(responseApi);
+                }
             }
+        }catch(e : Exception) {
+            view.showError(messageError)
+            throw Exception(e.message);
         }
-
-
-
     }
+
+
 }
