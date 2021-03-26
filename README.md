@@ -41,3 +41,6 @@ Eu como usuário espero entrar no aplicativo, clicar em um botão que me gere um
 # Versionamento
    Não utilizei branchs devido ao fato de ser um projeto pequeno onde apenas eu estava trabalhando. Commits explicativos.
  
+# Diagrama de Classes
+   https://drive.google.com/file/d/1ZhtRyY3TGZ2Mx8IWTvToc8XCiMR9JsMG/view?usp=sharing
+ 
