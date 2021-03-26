@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity(), JokeContract.View {
         // Bind entre VIEW e PRESENTER
         presenter.view = this
 
-        // TODO - VERIFICAR O PORQUE NÃO ESTÁ FUNCIONANDO O btnJoke.setOnClickListener (Synthetic)
-
         btnJoke.setOnClickListener {
            presenter.getJoke();
         }
@@ -43,6 +41,8 @@ class MainActivity : AppCompatActivity(), JokeContract.View {
     }
 
     override fun disableLoading() {
-        TODO("Not yet implemented")
+        progressBar3.visibility = View.INVISIBLE
+        btnJoke.visibility = View.VISIBLE
+        println("está passando aqui 2");
     }
 }
