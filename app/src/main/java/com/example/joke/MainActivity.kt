@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.joke.interfaces.JokeContract
-import com.example.joke.model.Joke
 import com.example.joke.presenter.JokePresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity(), JokeContract.View {
         // Bind entre VIEW e PRESENTER
         presenter.view = this
 
-        btnJoke.setOnClickListener {
+        buttonJoke.setOnClickListener {
             presenter.getJoke();
         }
 
@@ -37,12 +36,12 @@ class MainActivity : AppCompatActivity(), JokeContract.View {
 
     override fun showLoading() {
         progressBar3.visibility = View.VISIBLE
-        btnJoke.visibility = View.INVISIBLE
+        buttonJoke.visibility = View.INVISIBLE
     }
 
     override fun disableLoading() {
         progressBar3.visibility = View.INVISIBLE
-        btnJoke.visibility = View.VISIBLE
+        buttonJoke.visibility = View.VISIBLE
     }
 
     override fun openJokeList(joke: String) {

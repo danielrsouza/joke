@@ -1,6 +1,5 @@
 package com.example.joke.presenter
 
-import com.example.joke.R
 import com.example.joke.http.HttpHelper
 import com.example.joke.interfaces.JokeContract
 import org.jetbrains.anko.doAsync

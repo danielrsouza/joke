@@ -7,18 +7,20 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnJoke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/buttonJoke"
+        android:layout_width="224dp"
+        android:layout_height="64dp"
         android:layout_marginStart="159dp"
-        android:layout_marginTop="341dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="142dp"
         android:layout_marginBottom="342dp"
         android:text="@string/new_joke"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ProgressBar
         android:id="@+id/progressBar3"
@@ -28,10 +30,24 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnJoke"
-        app:layout_constraintVertical_bias="0.064"
+        app:layout_constraintTop_toBottomOf="@+id/buttonJoke"
+        app:layout_constraintVertical_bias="0.066"
         tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonJoke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chucknorris_logo_coloured_small" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
